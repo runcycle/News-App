@@ -6,8 +6,12 @@ import 'package:path/path.dart';
 import '../models/item_model.dart';
 import 'repository.dart';
 
-class NewsDbProvider implements Source {
+class NewsDbProvider implements Source, Cache {
   Database db;
+
+  NewsDbProvider() {
+    init();
+  }
   // ToDo - store and fetch top ids
   Future<List<int>> fetchTopIds() {
     return null;
@@ -61,3 +65,5 @@ class NewsDbProvider implements Source {
     return db.insert("Items", item.toMap());
   }
 }
+
+final newsDbProvider = NewsDbProvider();
