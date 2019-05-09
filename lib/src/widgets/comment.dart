@@ -55,7 +55,7 @@ class Comment extends StatelessWidget {
     .replaceAll('</i>', '')
     .replaceAll('&quot;', '"')
     .replaceAll('&gt;', '')
-    .replaceAll('&#x2F;', '& ');
+    .replaceAll('&#x2F;', '');
 
     return Text(text);
   }
